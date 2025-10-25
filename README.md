@@ -181,7 +181,7 @@ Este projeto é oferecido gratuitamente como um ministério de edificação espi
 ## 📞 Contato
 
 Para sugestões, correções ou parcerias:
-- 📧 Email: contact@manialibris.com
+- 📧 Email: info@manialibris.com
 - 🌐 Site: [manialibris.com](https://manialibris.com)
 
 ---
