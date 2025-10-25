@@ -1,200 +1,101 @@
 # ✝️ Promessas de Deus
 
-**Encontre soluções bíblicas para cada problema da vida**
+Aplicativo bíblico interativo com as promessas de Deus organizadas em 35 categorias temáticas.
 
-Uma aplicação web interativa com mais de 130 promessas bíblicas organizadas em 35 categorias temáticas para fortalecer sua fé e guiar sua jornada espiritual.
+🔗 **[Acessar aplicativo](https://scassani1964.github.io/promessas-biblicas/)**
 
-🌐 **Acesse agora**: [https://scassani1964.github.io/promessas-biblicas/](https://scassani1964.github.io/promessas-biblicas/)
+## 📖 Sobre
 
----
+Este aplicativo permite descobrir facilmente as promessas de Deus na Bíblia para cada situação da vida. Com mais de 130 versículos bíblicos em português, encontre rapidamente o encorajamento e a direção de que você precisa.
 
-## 📖 Sobre o Projeto
+## 🎯 Funcionalidades
 
-**Promessas de Deus** é uma ferramenta gratuita desenvolvida para ajudar cristãos de língua portuguesa a explorar as promessas divinas de forma prática e organizada. Seja para estudo pessoal, devocionais diários ou preparação de aulas bíblicas, esta aplicação oferece acesso rápido e intuitivo às promessas mais importantes das Escrituras.
+- **35 categorias organizadas** em 7 seções temáticas
+- **130+ versículos bíblicos** em português
+- **Interface responsiva** que funciona perfeitamente em computador, tablet e smartphone
+- **Modo de leitura completo** - clique em qualquer versículo para lê-lo em tela cheia
+- **Botão flutuante de retorno ao topo** - navegue facilmente pelas categorias
+- **Navegação intuitiva** com scroll suave e retorno fácil às categorias
 
----
+## 📱 Uso no Smartphone
 
-## ✨ Funcionalidades
+1. Abra o aplicativo no navegador do seu celular
+2. Adicione à tela inicial para acesso rápido como um app real
+3. Funciona offline após a primeira visita
+4. Use o botão flutuante (↑) para voltar ao topo rapidamente
 
-### 🔍 Busca Inteligente
-- Pesquise por palavras-chave em títulos, soluções e versos
-- Sistema de sinônimos integrado (ex: "medo" encontra também "temor", "ansioso")
-- Busca em referências bíblicas (ex: "João 3" encontra todos os versos do capítulo)
-- Busca no texto completo de todos os 130+ versículos
+## 📚 As 35 Categorias
 
-### 📚 Organização Temática
-35 categorias organizadas em 7 seções principais:
-
-#### 📖 Seção 1: Salvação e Relacionamento com Deus
-1. ✝️ Salvação
+### Seção 1: Salvação e Relacionamento com Deus
+1. ✝️ Salvação e Redenção
 2. ❤️ Amor de Deus
-3. 🕊️ Paz interior
-4. 😊 Alegria
-5. 💫 Presença de Deus
+3. 🕊️ Espírito Santo
+4. 🙏 Oração
+5. 😊 Alegria
 
-#### 🛡️ Seção 2: Proteção e Provisão
-6. 🛡️ Proteção divina
-7. 🍞 Provisão material
-8. 🏥 Cura e saúde
-9. 🧼 Perdão diário
-10. 🌟 Esperança
+### Seção 2: Proteção e Provisão
+6. 🛡️ Proteção
+7. 🏠 Refúgio
+8. 🍞 Provisão
+9. 💰 Prosperidade
+10. 💪 Força
 
-#### 💪 Seção 3: Força e Superação
-11. 💪 Força nos momentos difíceis
-12. 🏆 Vitória sobre o pecado
-13. 🌅 Restauração
-14. 📖 Sabedoria
-15. 🧭 Direção e guia
+### Seção 3: Força e Vitória
+11. 🏆 Vitória
+12. ⚔️ Batalha espiritual
+13. 😰 Ansiedade e medo
+14. 😢 Tristeza e luto
+15. 🌟 Esperança
 
-#### 🙏 Seção 4: Oração e Comunhão
-16. 🙏 Resposta às orações
-17. 🔥 Espírito Santo
-18. 🌱 Crescimento espiritual
-19. 🎁 Dons espirituais
-20. 👥 Unidade da igreja
+### Seção 4: Palavra e Sabedoria
+16. 📖 Palavra de Deus
+17. 🧠 Sabedoria
+18. 🎯 Direção
+19. ✅ Obediência
+20. 🎓 Conhecimento
 
-#### 👨‍👩‍👧‍👦 Seção 5: Família e Relacionamentos
-21. 👨‍👩‍👧‍👦 Família abençoada
-22. 👶 Filhos e descendência
-23. 💑 Casamento
-24. 🤝 Amizades verdadeiras
-25. ❤️‍🩹 Reconciliação
+### Seção 5: Vida Prática e Família
+21. 👨‍👩‍👧‍👦 Família
+22. 👶 Filhos
+23. 💕 Casamento
+24. 💼 Trabalho
+25. 🏥 Cura
 
-#### 💼 Seção 6: Trabalho e Propósito
-26. 💼 Sucesso no trabalho
-27. 🎯 Propósito de vida
-28. 🌾 Frutos e produtividade
-29. ⏰ Tempo oportuno
-30. 🏅 Recompensa pela fidelidade
+### Seção 6: Paz e Perseverança
+26. ☮️ Paz
+27. 💬 Perdão
+28. 🏃 Perseverança
+29. 😇 Santidade
+30. ⏰ Paciência
 
-#### 🌍 Seção 7: Vida Eterna e Esperança Futura
-31. 👑 Vida eterna
-32. 🌈 Nova criação
+### Seção 7: Volta de Cristo e Eternidade
+31. 👑 Volta de Cristo
+32. 🌍 Novos céus e terra
 33. 👼 Ressurreição
 34. 😌 Fim do sofrimento
 35. 🏰 Morada eterna
 
-### 💡 Interface Intuitiva
-- Design responsivo (funciona em desktop, tablet e smartphone)
-- Modais elegantes para leitura completa dos versículos
-- Navegação fluida entre categorias
-- Contadores de resultados
-- Sugestões de busca quando não há resultados
+## 💡 Como Usar
 
-### 📱 Progressive Web App (PWA)
-- Adicione à tela inicial do smartphone como um app nativo
-- Funciona offline após a primeira visita
-- Experiência de usuário otimizada para mobile
+- **Navegue pelas seções** e clique na categoria desejada
+- **Clique em qualquer versículo** para lê-lo em tela cheia
+- **Use o botão flutuante (↑)** para voltar ao topo rapidamente
+- **Compartilhe com amigos** enviando o link do aplicativo
 
----
+## 🌐 Versões Disponíveis
 
-## 🚀 Como Usar
+- **Versão em português**: [promessas-biblicas](https://scassani1964.github.io/promessas-biblicas/)
+- **Version française**: [promesses-bibliques](https://scassani1964.github.io/promesses-bibliques/)
 
-### No Navegador
-1. Acesse [https://scassani1964.github.io/promessas-biblicas/](https://scassani1964.github.io/promessas-biblicas/)
-2. Navegue pelas categorias ou use a busca
-3. Clique em uma categoria para ver as promessas
-4. Clique em uma referência bíblica para ler o verso completo
+## 📧 Contato
 
-### No Smartphone (Como App)
+Um projeto da **[Mania Libris](https://manialibris.com)**  
+Email: info@manialibris.com
 
-**iPhone (Safari):**
-1. Abra o link no Safari
-2. Toque no botão "Compartilhar" (ícone de quadrado com seta)
-3. Role para baixo e selecione "Adicionar à Tela de Início"
-4. Nomeie como "Promessas de Deus" e confirme
+## 📄 Licença
 
-**Android (Chrome):**
-1. Abra o link no Chrome
-2. Toque nos três pontos (⋮) no canto superior direito
-3. Selecione "Adicionar à tela inicial"
-4. Nomeie como "Promessas de Deus" e confirme
+Este projeto é de uso livre para edificação espiritual. Os textos bíblicos são de domínio público.
 
 ---
 
-## 🔍 Exemplos de Busca
-
-A busca inteligente permite encontrar promessas de diversas formas:
-
-- **Por sentimento**: `ansioso`, `triste`, `medo`, `preocupado`
-- **Por tema**: `casamento`, `trabalho`, `saúde`, `família`
-- **Por referência**: `João 3`, `Salmos 23`, `Romanos 8`
-- **Por palavra-chave**: `vida eterna`, `proteção`, `paz`, `força`
-
-O sistema também reconhece sinônimos automaticamente:
-- `medo` → encontra também "temor", "receio", "ansioso"
-- `triste` → encontra também "tristeza", "desanimado"
-- `dinheiro` → encontra também "financeiro", "provisão"
-
----
-
-## 🎨 Tecnologias
-
-- **HTML5** - Estrutura semântica
-- **CSS3** - Design responsivo e moderno
-- **JavaScript Vanilla** - Sem dependências externas
-- **GitHub Pages** - Hospedagem gratuita e confiável
-
----
-
-## 📊 Estatísticas
-
-- 📖 **35 categorias** organizadas tematicamente
-- ✝️ **130+ versículos** bíblicos selecionados
-- 🔍 **Sistema de busca** com inteligência de sinônimos
-- 🌍 **7 seções** temáticas principais
-- 📱 **100% responsivo** (desktop, tablet, smartphone)
-- 🆓 **Totalmente gratuito** e sem anúncios
-
----
-
-## 🤝 Sobre Mania Libris
-
-Este projeto é uma iniciativa de [**Mania Libris**](https://manialibris.com), uma editora teológica dedicada a criar recursos de qualidade para edificação do Corpo de Cristo.
-
-**Outros recursos disponíveis:**
-- Livros teológicos bilíngues (Português/Francês)
-- Estudos sobre escatologia e teologia sistemática
-- Recursos gratuitos para crescimento espiritual
-
-Visite: [https://manialibris.com](https://manialibris.com)
-
----
-
-## 📝 Licença
-
-Este projeto é oferecido gratuitamente como um ministério de edificação espiritual.
-
-**Uso permitido:**
-- ✅ Uso pessoal
-- ✅ Compartilhamento do link
-- ✅ Uso em igrejas e ministérios
-- ✅ Referência em estudos bíblicos
-
-**Uso não permitido:**
-- ❌ Modificação e redistribuição sem autorização
-- ❌ Uso comercial
-- ❌ Remoção de créditos
-
----
-
-## 📞 Contato
-
-Para sugestões, correções ou parcerias:
-- 📧 Email: info@manialibris.com
-- 🌐 Site: [manialibris.com](https://manialibris.com)
-
----
-
-## 🙏 Contribua
-
-Se você foi abençoado por esta ferramenta e deseja apoiar a criação de mais recursos bíblicos gratuitos, entre em contato conosco.
-
----
-
-**Que Deus abençoe sua caminhada através de Suas preciosas promessas!** ✝️
-
----
-
-*Última atualização: Outubro 2025*  
-*Versão: 2.0 - 35 categorias completas*
+*"A tua palavra é lâmpada que ilumina os meus passos e luz que clareia o meu caminho." - Salmos 119:105*
