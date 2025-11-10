@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubra as promessas de Deus para cada situação da vida. 35 categorias com mais de 130 versículos bíblicos em português.">
+    <meta name="keywords" content="promessas bíblicas, versículos, Bíblia, promessas de Deus, versículos por categoria, aplicativo bíblico">
+    <meta name="author" content="Mania Libris">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="✝️ Promessas de Deus - 35 Categorias">
+    <meta property="og:description" content="Descubra as promessas de Deus para cada situação da vida. Navegue por 35 categorias com mais de 130 versículos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scassani1964.github.io/promessas-biblicas/">
+    
+    <title>✝️ Promessas de Deus - Aplicativo Bíblico Interativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(218, 165, 32, 0.1);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid #DAA520;
+        }
+
+        h1 {
+            color: #DAA520;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #DAA520;
+        }
+
+        .intro h2 {
+            color: #DAA520;
+            margin-bottom: 15px;
+        }
+
+        /* Accordéon des sections */
+        .section-accordion {
+            margin: 20px 0;
+        }
+
+        .section-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .section-header {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.2) 0%, rgba(218, 165, 32, 0.1) 100%);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .section-header:hover {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.3) 0%, rgba(218, 165, 32, 0.2) 100%);
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #DAA520;
+            font-weight: bold;
+        }
+
+        .section-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .section-item.active .section-icon {
+            transform: rotate(180deg);
+        }
+
+        .categories-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .section-item.active .categories-container {
+            max-height: 2000px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .category-card {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #DAA520;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            background: rgba(218, 165, 32, 0.15);
+            transform: translateX(5px);
+        }
+
+        .category-title {
+            font-size: 1.1em;
+            color: #DAA520;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Contenu des versets */
+        .verses-section {
+            display: none;
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 2px solid #DAA520;
+        }
+
+        .verses-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .verses-section h2 {
+            color: #DAA520;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #DAA520;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #c99a1f;
+            transform: scale(1.05);
+        }
+
+        .verse {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 4px solid #DAA520;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .verse:hover {
+            background: rgba(218, 165, 32, 0.1);
+            transform: translateX(10px);
+        }
+
+        .verse-reference {
+            color: #DAA520;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .verse-text {
+            color: #f0f0f0;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        /* Modal plein écran */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            max-width: 800px;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            border: 3px solid #DAA520;
+            text-align: center;
+        }
+
+        .modal-reference {
+            color: #DAA520;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .modal-text {
+            color: #f0f0f0;
+            font-size: 1.5em;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        .modal-close {
+            padding: 15px 40px;
+            background: #DAA520;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #c99a1f;
+            transform: scale(1.05);
+        }
+
+        /* Bouton flottant */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #DAA520;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            background: #c99a1f;
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-top: 2px solid #DAA520;
+        }
+
+        footer p {
+            margin: 10px 0;
+            color: #DAA520;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .section-title {
+                font-size: 1.2em;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .modal-text {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Logo Mania Libris -->
+            <svg width="120" height="60" viewBox="0 0 120 60" style="margin-bottom: 15px;">
+                <text x="60" y="25" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#DAA520" text-anchor="middle">MANIA</text>
+                <text x="60" y="45" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#DAA520" text-anchor="middle">LIBRIS</text>
+                <rect x="10" y="10" width="100" height="40" fill="none" stroke="#DAA520" stroke-width="2" rx="5"/>
+            </svg>
+            
+            <h1>✝️ Promessas de Deus</h1>
+            <p class="subtitle">Descubra as promessas de Deus para cada situação da sua vida</p>
+            <p>35 categorias | 130+ versículos | 7 seções temáticas</p>
+        </header>
+
+        <div class="intro">
+            <h2>📖 Bem-vindo</h2>
+            <p>Este aplicativo permite descobrir facilmente as promessas de Deus na Bíblia para cada situação da vida. Navegue pelas seções temáticas, escolha uma categoria e leia os versículos que Deus preparou para você.</p>
+            <p><strong>💡 Como usar:</strong> Clique em uma das 7 seções abaixo para ver as categorias. Depois, clique em qualquer categoria para ler os versículos.</p>
+            <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(218, 165, 32, 0.3);"><strong>🌐 Outros recursos:</strong> Visite <a href="https://manialibris.com" target="_blank" rel="noopener" style="color: #DAA520; text-decoration: none; font-weight: bold;">manialibris.com</a> para descobrir livros teológicos e recursos bíblicos em português e francês.</p>
+        </div>
+
+        <!-- Navigation par accordéon -->
+        <div id="sectionsContainer" class="section-accordion">
+            <!-- Les sections seront générées par JavaScript -->
+        </div>
+
+        <!-- Contenu des versets (caché par défaut) -->
+        <div id="versesContainer">
+            <!-- Les versets seront affichés ici -->
+        </div>
+
+        <!-- Modal plein écran -->
+        <div id="verseModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-reference" id="modalReference"></div>
+                <div class="modal-text" id="modalText"></div>
+                <button class="modal-close" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Bouton scroll to top -->
+        <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+
+        <footer>
+            <p><strong>✝️ Um projeto da Mania Libris</strong></p>
+            <p>📧 Email: <a href="mailto:info@manialibris.com" style="color: #DAA520; text-decoration: none;">info@manialibris.com</a></p>
+            <p>🌐 Site: <a href="https://manialibris.com" target="_blank" rel="noopener" style="color: #DAA520; text-decoration: none;">manialibris.com</a></p>
+            <p>🇫🇷 Version française: <a href="https://manialibris.com/promesses-bibliques.html" target="_blank" rel="noopener" style="color: #DAA520; text-decoration: none;">Promesses Bibliques</a></p>
+            <p style="margin-top: 20px; font-style: italic;">"A tua palavra é lâmpada que ilumina os meus passos e luz que clareia o meu caminho." - Salmos 119:105</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #999;">© 2025 Mania Libris - Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script>
+        // Données complètes des promesses bibliques
+        const promessasData = {
+            secoes: [
+                {
+                    titulo: "Seção 1: Salvação e Relacionamento com Deus",
+                    categorias: [
+                        {
+                            emoji: "✝️",
+                            nome: "Salvação e Redenção",
+                            versiculos: [
+                                { ref: "João 3:16", texto: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna." },
+                                { ref: "Romanos 10:13", texto: "Porque todo aquele que invocar o nome do Senhor será salvo." },
+                                { ref: "Efésios 2:8-9", texto: "Porque pela graça sois salvos, por meio da fé; e isto não vem de vós, é dom de Deus. Não vem das obras, para que ninguém se glorie." }
+                            ]
+                        },
+                        {
+                            emoji: "❤️",
+                            nome: "Amor de Deus",
+                            versiculos: [
+                                { ref: "Romanos 8:38-39", texto: "Porque estou certo de que, nem a morte, nem a vida, nem os anjos, nem os principados, nem as potestades, nem o presente, nem o porvir, nem a altura, nem a profundidade, nem alguma outra criatura nos poderá separar do amor de Deus, que está em Cristo Jesus nosso Senhor." },
+                                { ref: "1 João 4:16", texto: "E nós conhecemos, e cremos no amor que Deus nos tem. Deus é amor; e quem está em amor está em Deus, e Deus nele." }
+                            ]
+                        },
+                        {
+                            emoji: "🕊️",
+                            nome: "Espírito Santo",
+                            versiculos: [
+                                { ref: "João 14:26", texto: "Mas aquele Consolador, o Espírito Santo, que o Pai enviará em meu nome, esse vos ensinará todas as coisas, e vos fará lembrar de tudo quanto vos tenho dito." },
+                                { ref: "Atos 1:8", texto: "Mas recebereis a virtude do Espírito Santo, que há de vir sobre vós; e ser-me-eis testemunhas, tanto em Jerusalém como em toda a Judéia e Samaria, e até aos confins da terra." }
+                            ]
+                        },
+                        {
+                            emoji: "🙏",
+                            nome: "Oração",
+                            versiculos: [
+                                { ref: "Mateus 7:7", texto: "Pedi, e dar-se-vos-á; buscai, e encontrareis; batei, e abrir-se-vos-á." },
+                                { ref: "1 João 5:14", texto: "E esta é a confiança que temos nele, que, se pedirmos alguma coisa, segundo a sua vontade, ele nos ouve." }
+                            ]
+                        },
+                        {
+                            emoji: "😊",
+                            nome: "Alegria",
+                            versiculos: [
+                                { ref: "Neemias 8:10", texto: "Não vos entristeçais; porque a alegria do Senhor é a vossa força." },
+                                { ref: "Salmos 16:11", texto: "Tu me farás ver a vereda da vida; na tua presença há fartura de alegrias; à tua mão direita há delícias perpetuamente." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    titulo: "Seção 2: Proteção e Provisão",
+                    categorias: [
+                        {
+                            emoji: "🛡️",
+                            nome: "Proteção",
+                            versiculos: [
+                                { ref: "Salmos 91:11", texto: "Porque aos seus anjos dará ordem a teu respeito, para te guardarem em todos os teus caminhos." },
+                                { ref: "Provérbios 18:10", texto: "Torre forte é o nome do Senhor; a ela correrá o justo, e estará em alto retiro." }
+                            ]
+                        },
+                        {
+                            emoji: "🏠",
+                            nome: "Refúgio",
+                            versiculos: [
+                                { ref: "Salmos 46:1", texto: "Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia." },
+                                { ref: "Salmos 91:2", texto: "Direi do Senhor: Ele é o meu Deus, o meu refúgio, a minha fortaleza, e nele confiarei." }
+                            ]
+                        },
+                        {
+                            emoji: "🍞",
+                            nome: "Provisão",
+                            versiculos: [
+                                { ref: "Filipenses 4:19", texto: "O meu Deus, segundo as suas riquezas, suprirá todas as vossas necessidades em glória, por Cristo Jesus." },
+                                { ref: "Mateus 6:33", texto: "Mas, buscai primeiro o reino de Deus, e a sua justiça, e todas estas coisas vos serão acrescentadas." }
+                            ]
+                        },
+                        {
+                            emoji: "💰",
+                            nome: "Prosperidade",
+                            versiculos: [
+                                { ref: "3 João 1:2", texto: "Amado, desejo que te vá bem em todas as coisas, e que tenhas saúde, assim como bem vai a tua alma." },
+                                { ref: "Josué 1:8", texto: "Não se aparte da tua boca o livro desta lei; antes medita nele dia e noite, para que tenhas cuidado de fazer conforme a tudo quanto nele está escrito; porque então farás prosperar o teu caminho, e serás bem sucedido." }
+                            ]
+                        },
+                        {
+                            emoji: "💪",
+                            nome: "Força",
+                            versiculos: [
+                                { ref: "Isaías 40:31", texto: "Mas os que esperam no Senhor renovarão as suas forças; subirão com asas como águias; correrão, e não se cansarão; caminharão, e não se fatigarão." },
+                                { ref: "Filipenses 4:13", texto: "Posso todas as coisas em Cristo que me fortalece." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    titulo: "Seção 3: Força e Vitória",
+                    categorias: [
+                        {
+                            emoji: "🏆",
+                            nome: "Vitória",
+                            versiculos: [
+                                { ref: "1 Coríntios 15:57", texto: "Mas graças a Deus que nos dá a vitória por nosso Senhor Jesus Cristo." },
+                                { ref: "Romanos 8:37", texto: "Mas em todas estas coisas somos mais do que vencedores, por aquele que nos amou." }
+                            ]
+                        },
+                        {
+                            emoji: "⚔️",
+                            nome: "Batalha espiritual",
+                            versiculos: [
+                                { ref: "Efésios 6:12", texto: "Porque não temos que lutar contra a carne e o sangue, mas, sim, contra os principados, contra as potestades, contra os príncipes das trevas deste século, contra as hostes espirituais da maldade, nos lugares celestiais." },
+                                { ref: "2 Coríntios 10:4", texto: "Porque as armas da nossa milícia não são carnais, mas sim poderosas em Deus para destruição das fortalezas." }
+                            ]
+                        },
+                        {
+                            emoji: "😰",
+                            nome: "Ansiedade e medo",
+                            versiculos: [
+                                { ref: "Filipenses 4:6-7", texto: "Não estejais inquietos por coisa alguma; antes as vossas petições sejam em tudo conhecidas diante de Deus pela oração e súplica, com ação de graças. E a paz de Deus, que excede todo o entendimento, guardará os vossos corações e os vossos sentimentos em Cristo Jesus." },
+                                { ref: "Isaías 41:10", texto: "Não temas, porque eu sou contigo; não te assombres, porque eu sou teu Deus; eu te fortaleço, e te ajudo, e te sustento com a destra da minha justiça." }
+                            ]
+                        },
+                        {
+                            emoji: "😢",
+                            nome: "Tristeza e luto",
+                            versiculos: [
+                                { ref: "Salmos 34:18", texto: "Perto está o Senhor dos que têm o coração quebrantado, e salva os contritos de espírito." },
+                                { ref: "Apocalipse 21:4", texto: "E Deus limpará de seus olhos toda a lágrima; e não haverá mais morte, nem pranto, nem clamor, nem dor; porque já as primeiras coisas são passadas." }
+                            ]
+                        },
+                        {
+                            emoji: "🌟",
+                            nome: "Esperança",
+                            versiculos: [
+                                { ref: "Jeremias 29:11", texto: "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz, e não de mal, para vos dar o fim que esperais." },
+                                { ref: "Romanos 15:13", texto: "Ora o Deus de esperança vos encha de todo o gozo e paz em crença, para que abundeis em esperança pela virtude do Espírito Santo." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    titulo: "Seção 4: Palavra e Sabedoria",
+                    categorias: [
+                        {
+                            emoji: "📖",
+                            nome: "Palavra de Deus",
+                            versiculos: [
+                                { ref: "Salmos 119:105", texto: "A tua palavra é lâmpada para os meus pés e luz para o meu caminho." },
+                                { ref: "Hebreus 4:12", texto: "Porque a palavra de Deus é viva e eficaz, e mais penetrante do que espada alguma de dois gumes, e penetra até à divisão da alma e do espírito, e das juntas e medulas, e é apta para discernir os pensamentos e intenções do coração." }
+                            ]
+                        },
+                        {
+                            emoji: "🧠",
+                            nome: "Sabedoria",
+                            versiculos: [
+                                { ref: "Tiago 1:5", texto: "E, se algum de vós tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente, e o não lança em rosto, e ser-lhe-á dada." },
+                                { ref: "Provérbios 3:5-6", texto: "Confia no Senhor de todo o teu coração, e não te estribes no teu próprio entendimento. Reconhece-o em todos os teus caminhos, e ele endireitará as tuas veredas." }
+                            ]
+                        },
+                        {
+                            emoji: "🎯",
+                            nome: "Direção",
+                            versiculos: [
+                                { ref: "Salmos 32:8", texto: "Instruir-te-ei, e ensinar-te-ei o caminho que deves seguir; guiar-te-ei com os meus olhos." },
+                                { ref: "Provérbios 16:9", texto: "O coração do homem planeja o seu caminho, mas o Senhor lhe dirige os passos." }
+                            ]
+                        },
+                        {
+                            emoji: "✅",
+                            nome: "Obediência",
+                            versiculos: [
+                                { ref: "João 14:15", texto: "Se me amais, guardai os meus mandamentos." },
+                                { ref: "Deuteronômio 28:1", texto: "E será que, se ouvires a voz do Senhor teu Deus, tendo cuidado de guardar todos os seus mandamentos que eu hoje te ordeno, o Senhor teu Deus te exaltará sobre todas as nações da terra." }
+                            ]
+                        },
+                        {
+                            emoji: "🎓",
+                            nome: "Conhecimento",
+                            versiculos: [
+                                { ref: "Provérbios 2:6", texto: "Porque o Senhor dá a sabedoria; da sua boca é que vem o conhecimento e o entendimento." },
+                                { ref: "Colossenses 2:3", texto: "Em quem estão escondidos todos os tesouros da sabedoria e da ciência." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    titulo: "Seção 5: Vida Prática e Família",
+                    categorias: [
+                        {
+                            emoji: "👨‍👩‍👧‍👦",
+                            nome: "Família",
+                            versiculos: [
+                                { ref: "Josué 24:15", texto: "Porém, se vos parece mal aos vossos olhos servir ao Senhor, escolhei hoje a quem sirvais; se aos deuses a quem serviram vossos pais, que estavam além do rio, ou aos deuses dos amorreus, em cuja terra habitais; porém eu e a minha casa serviremos ao Senhor." },
+                                { ref: "Salmos 127:3", texto: "Eis que os filhos são herança do Senhor, e o fruto do ventre o seu galardão." }
+                            ]
+                        },
+                        {
+                            emoji: "👶",
+                            nome: "Filhos",
+                            versiculos: [
+                                { ref: "Provérbios 22:6", texto: "Educa a criança no caminho em que deve andar; e até quando envelhecer não se desviará dele." },
+                                { ref: "Salmos 103:17", texto: "Mas a misericórdia do Senhor é desde a eternidade e até a eternidade sobre aqueles que o temem, e a sua justiça sobre os filhos dos filhos." }
+                            ]
+                        },
+                        {
+                            emoji: "💕",
+                            nome: "Casamento",
+                            versiculos: [
+                                { ref: "Eclesiastes 4:9-10", texto: "Melhor é serem dois do que um, porque têm melhor paga do seu trabalho. Porque se um cair, o outro levanta o seu companheiro; mas ai do que estiver só; pois, caindo, não haverá outro que o levante." },
+                                { ref: "Efésios 5:25", texto: "Vós, maridos, amai vossas mulheres, como também Cristo amou a igreja, e a si mesmo se entregou por ela." }
+                            ]
+                        },
+                        {
+                            emoji: "💼",
+                            nome: "Trabalho",
+                            versiculos: [
+                                { ref: "Colossenses 3:23", texto: "E tudo quanto fizerdes, fazei-o de todo o coração, como ao Senhor, e não aos homens." },
+                                { ref: "Provérbios 16:3", texto: "Confia ao Senhor as tuas obras, e teus pensamentos serão estabelecidos." }
+                            ]
+                        },
+                        {
+                            emoji: "🏥",
+                            nome: "Cura",
+                            versiculos: [
+                                { ref: "Êxodo 15:26", texto: "Porque eu sou o Senhor que te sara." },
+                                { ref: "Salmos 103:2-3", texto: "Bendize, ó minha alma, ao Senhor, e não te esqueças de nenhum de seus benefícios. Ele é o que perdoa todas as tuas iniquidades, que sara todas as tuas enfermidades." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    titulo: "Seção 6: Paz e Perseverança",
+                    categorias: [
+                        {
+                            emoji: "☮️",
+                            nome: "Paz",
+                            versiculos: [
+                                { ref: "João 14:27", texto: "Deixo-vos a paz, a minha paz vos dou; não vo-la dou como o mundo a dá. Não se turbe o vosso coração, nem se atemorize." },
+                                { ref: "Filipenses 4:7", texto: "E a paz de Deus, que excede todo o entendimento, guardará os vossos corações e os vossos sentimentos em Cristo Jesus." }
+                            ]
+                        },
+                        {
+                            emoji: "💬",
+                            nome: "Perdão",
+                            versiculos: [
+                                { ref: "1 João 1:9", texto: "Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados, e nos purificar de toda a injustiça." },
+                                { ref: "Salmos 103:12", texto: "Quanto está longe o oriente do ocidente, assim afasta de nós as nossas transgressões." }
+                            ]
+                        },
+                        {
+                            emoji: "🏃",
+                            nome: "Perseverança",
+                            versiculos: [
+                                { ref: "Hebreus 12:1", texto: "Portanto nós também, pois que estamos rodeados de uma tão grande nuvem de testemunhas, deixemos todo o embaraço, e o pecado que tão de perto nos rodeia, e corramos com paciência a carreira que nos está proposta." },
+                                { ref: "Gálatas 6:9", texto: "E não nos cansemos de fazer bem, porque a seu tempo ceifaremos, se não houvermos desfalecido." }
+                            ]
+                        },
+                        {
+                            emoji: "😇",
+                            nome: "Santidade",
+                            versiculos: [
+                                { ref: "1 Pedro 1:15-16", texto: "Mas, como é santo aquele que vos chamou, sede vós também santos em toda a vossa maneira de viver; porquanto está escrito: Sede santos, porque eu sou santo." },
+                                { ref: "Hebreus 12:14", texto: "Segui a paz com todos, e a santificação, sem a qual ninguém verá o Senhor." }
+                            ]
+                        },
+                        {
+                            emoji: "⏰",
+                            nome: "Paciência",
+                            versiculos: [
+                                { ref: "Salmos 27:14", texto: "Espera no Senhor, anima-te, e ele fortalecerá o teu coração; espera, pois, no Senhor." },
+                                { ref: "Romanos 12:12", texto: "Alegrai-vos na esperança, sede pacientes na tribulação, perseverai na oração." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    titulo: "Seção 7: Volta de Cristo e Eternidade",
+                    categorias: [
+                        {
+                            emoji: "👑",
+                            nome: "Volta de Cristo",
+                            versiculos: [
+                                { ref: "João 14:3", texto: "E quando eu for, e vos preparar lugar, virei outra vez, e vos levarei para mim mesmo, para que onde eu estiver estejais vós também." },
+                                { ref: "1 Tessalonicenses 4:16-17", texto: "Porque o mesmo Senhor descerá do céu com alarido, e com voz de arcanjo, e com a trombeta de Deus; e os que morreram em Cristo ressuscitarão primeiro. Depois nós, os que ficarmos vivos, seremos arrebatados juntamente com eles nas nuvens, a encontrar o Senhor nos ares, e assim estaremos sempre com o Senhor." }
+                            ]
+                        },
+                        {
+                            emoji: "🌍",
+                            nome: "Novos céus e terra",
+                            versiculos: [
+                                { ref: "2 Pedro 3:13", texto: "Mas nós, segundo a sua promessa, aguardamos novos céus e nova terra, em que habita a justiça." },
+                                { ref: "Apocalipse 21:1", texto: "E vi um novo céu, e uma nova terra. Porque já o primeiro céu e a primeira terra passaram, e o mar já não existe." }
+                            ]
+                        },
+                        {
+                            emoji: "👼",
+                            nome: "Ressurreição",
+                            versiculos: [
+                                { ref: "João 11:25-26", texto: "Disse-lhe Jesus: Eu sou a ressurreição e a vida; quem crê em mim, ainda que esteja morto, viverá; E todo aquele que vive, e crê em mim, nunca morrerá. Crês tu isto?" },
+                                { ref: "1 Coríntios 15:52", texto: "Num momento, num abrir e fechar de olhos, ante a última trombeta; porque a trombeta soará, e os mortos ressuscitarão incorruptíveis, e nós seremos transformados." }
+                            ]
+                        },
+                        {
+                            emoji: "😌",
+                            nome: "Fim do sofrimento",
+                            versiculos: [
+                                { ref: "Apocalipse 21:4", texto: "E Deus limpará de seus olhos toda a lágrima; e não haverá mais morte, nem pranto, nem clamor, nem dor; porque já as primeiras coisas são passadas." },
+                                { ref: "Romanos 8:18", texto: "Porque para mim tenho por certo que as aflições deste tempo presente não são para comparar com a glória que em nós há de ser revelada." }
+                            ]
+                        },
+                        {
+                            emoji: "🏰",
+                            nome: "Morada eterna",
+                            versiculos: [
+                                { ref: "João 14:2", texto: "Na casa de meu Pai há muitas moradas; se não fosse assim, eu vo-lo teria dito. Vou preparar-vos lugar." },
+                                { ref: "Apocalipse 21:3", texto: "E ouvi uma grande voz do céu, que dizia: Eis aqui o tabernáculo de Deus com os homens, pois com eles habitará, e eles serão o seu povo, e o mesmo Deus estará com eles, e será o seu Deus." }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // État de l'application
+        let currentSection = null;
+
+        // Générer l'accordéon des sections
+        function generateSections() {
+            const container = document.getElementById('sectionsContainer');
+            
+            promessasData.secoes.forEach((secao, index) => {
+                const sectionItem = document.createElement('div');
+                sectionItem.className = 'section-item';
+                sectionItem.innerHTML = `
+                    <div class="section-header" onclick="toggleSection(${index})">
+                        <span class="section-title">${secao.titulo}</span>
+                        <span class="section-icon">▼</span>
+                    </div>
+                    <div class="categories-container">
+                        <div class="categories-grid" id="categories-${index}">
+                            ${secao.categorias.map((cat, catIndex) => `
+                                <div class="category-card" onclick="showCategory(${index}, ${catIndex})">
+                                    <div class="category-title">${cat.emoji} ${cat.nome}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(sectionItem);
+            });
+        }
+
+        // Toggle accordéon
+        function toggleSection(index) {
+            const sections = document.querySelectorAll('.section-item');
+            const clickedSection = sections[index];
+            
+            // Fermer toutes les autres sections
+            sections.forEach((section, i) => {
+                if (i !== index) {
+                    section.classList.remove('active');
+                }
+            });
+            
+            // Toggle la section cliquée
+            clickedSection.classList.toggle('active');
+        }
+
+        // Afficher une catégorie
+        function showCategory(sectionIndex, categoryIndex) {
+            const secao = promessasData.secoes[sectionIndex];
+            const categoria = secao.categorias[categoryIndex];
+            
+            // Cacher l'accordéon
+            document.getElementById('sectionsContainer').style.display = 'none';
+            
+            // Créer et afficher la section de versets
+            const versesContainer = document.getElementById('versesContainer');
+            versesContainer.innerHTML = `
+                <div class="verses-section active">
+                    <button class="back-button" onclick="backToSections()">← Voltar às Categorias</button>
+                    <h2>${categoria.emoji} ${categoria.nome}</h2>
+                    ${categoria.versiculos.map(v => `
+                        <div class="verse" onclick="openModal('${v.ref}', \`${v.texto}\`)">
+                            <div class="verse-reference">${v.ref}</div>
+                            <div class="verse-text">${v.texto}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Retour aux sections
+        function backToSections() {
+            document.getElementById('sectionsContainer').style.display = 'block';
+            document.getElementById('versesContainer').innerHTML = '';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Ouvrir le modal
+        function openModal(reference, text) {
+            document.getElementById('modalReference').textContent = reference;
+            document.getElementById('modalText').textContent = text;
+            document.getElementById('verseModal').classList.add('active');
+        }
+
+        // Fermer le modal
+        function closeModal() {
+            document.getElementById('verseModal').classList.remove('active');
+        }
+
+        // Fermer modal avec ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialisation
+        generateSections();
+    </script>
+
+    <!-- ========================================
+         SCRIPT DE SCROLL AUTOMATIQUE
+         Scroll vers la catégorie quand on clique
+         ======================================== -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Script de scroll automatique chargé');
+        
+        // Fonction pour scroller vers un élément
+        function scrollToElement(element) {
+            if (!element) return;
+            
+            // Calculer la position avec un offset de 100px du haut
+            const yOffset = -100;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            
+            // Scroll smooth
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            });
+            
+            console.log('Scroll vers:', element.id || element.className);
+        }
+        
+        // Observer les changements dans le DOM
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && 
+                    (mutation.attributeName === 'style' || mutation.attributeName === 'class')) {
+                    const target = mutation.target;
+                    if (target.style.display !== 'none' && 
+                        (target.classList.contains('category') || 
+                         target.classList.contains('categoria') ||
+                         target.id.includes('cat'))) {
+                        setTimeout(() => scrollToElement(target), 150);
+                    }
+                }
+            });
+        });
+        
+        // Observer tout le body
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['style', 'class']
+        });
+        
+        // Écouter les clics
+        document.body.addEventListener('click', function(e) {
+            const clickedElement = e.target;
+            
+            if (clickedElement.tagName === 'BUTTON' || 
+                clickedElement.classList.contains('category-btn')) {
+                
+                setTimeout(function() {
+                    let categoryElement = null;
+                    
+                    // Chercher par ID si onclick présent
+                    const onclickAttr = clickedElement.getAttribute('onclick');
+                    if (onclickAttr) {
+                        const match = onclickAttr.match(/['"]([^'"]+)['"]/);
+                        if (match) {
+                            categoryElement = document.getElementById(match[1]);
+                        }
+                    }
+                    
+                    // Chercher le prochain élément sibling
+                    if (!categoryElement) {
+                        categoryElement = clickedElement.nextElementSibling;
+                        while (categoryElement && categoryElement.style.display === 'none') {
+                            categoryElement = categoryElement.nextElementSibling;
+                        }
+                    }
+                    
+                    if (categoryElement) {
+                        scrollToElement(categoryElement);
+                    }
+                }, 200);
+            }
+        });
+        
+        console.log('Observateur de scroll activé');
+    });
+    </script>
+</body>
+</html>
